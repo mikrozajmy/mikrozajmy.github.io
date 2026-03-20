@@ -13,8 +13,6 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/favicon.png">
     
-    <link rel="stylesheet" href="style.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -26,6 +24,26 @@
             }
         }
     </script>
+    
+    <style>
+        body { background-color: #f8fafc; }
+        .hero-gradient { background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); }
+        
+        /* Сетка карточек */
+        .card-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        @media (min-width: 480px) { .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (min-width: 768px) { .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        @media (min-width: 1280px) { .card-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+
+        /* Стили скроллбара навигации */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 <body class="text-slate-900 antialiased">
 
@@ -97,32 +115,250 @@
                     <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div>
                         <div class="w-full h-16 mb-4 flex items-center justify-center p-2">
-                            <img src="img/ab-finance-group.jpg" alt="AB Finance Group" class="max-h-full max-w-full object-contain filter group-hover:contrast-125 transition-all" loading="lazy">
+                            <img src="img/ab-finance-group.jpg" alt="займы онлайн, на карту, микрозаймы, AB Finance Group" class="max-h-full max-w-full object-contain filter group-hover:contrast-125 transition-all" loading="lazy">
                         </div>
                         <h3 class="font-bold text-slate-800 text-xs mb-1 truncate uppercase tracking-tight">AB Finance Group</h3>
+                        <div class="flex justify-center text-yellow-400 text-[8px] mb-3 space-x-0.5">
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
-                    <a href="#" target="_blank" rel="nofollow" class="block w-full bg-blue-600 text-white py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95 transform">Получить</a>
+                        <div class="space-y-1.5 py-3 border-y border-slate-50 mb-3 text-left">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Сумма:</span>
+                                <span class="font-bold text-slate-800">до 30 000 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Ставка:</span>
+                                <span class="font-bold text-blue-600 italic">от 0%</span>
+                            </div>
+                        </div>
+                        <div class="text-[8px] text-slate-400 leading-tight mb-4 min-h-[32px] flex flex-col justify-center opacity-60 italic">
+                            <p class="truncate font-semibold uppercase">ООО МКК «АБВ»</p>
+                            <p>№ 2204104009896</p>
+                        </div>
+                    </div>
+                    <a href="https://pxl.leads.su/click/4c171f9a15ffe9481eff7f28e70b9433?erid=2W5zFJEgLpg" target="_blank" rel="nofollow" class="block w-full bg-blue-600 text-white py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95 transform">Получить</a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div>
+                        <div class="w-full h-16 mb-4 flex items-center justify-center p-2">
+                            <img src="img/belkacredit.jpg" alt="займы онлайн, на карту, микрозаймы, BelkaCredit" class="max-h-full max-w-full object-contain filter group-hover:contrast-125 transition-all" loading="lazy">
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xs mb-1 truncate uppercase tracking-tight">BelkaCredit</h3>
+                        <div class="flex justify-center text-yellow-400 text-[8px] mb-3 space-x-0.5">
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <div class="space-y-1.5 py-3 border-y border-slate-50 mb-3 text-left">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Сумма:</span>
+                                <span class="font-bold text-slate-800">до 30 000 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Ставка:</span>
+                                <span class="font-bold text-blue-600 italic">от 0%</span>
+                            </div>
+                        </div>
+                        <div class="text-[8px] text-slate-400 leading-tight mb-4 min-h-[32px] flex flex-col justify-center opacity-60 italic">
+                            <p class="truncate font-semibold uppercase">ООО МКК «Финмодель»</p>
+                            <p>№ 2403045010054</p>
+                        </div>
+                    </div>
+                    <a href="https://pxl.leads.su/click/d4f472c2ee8ec7b1ac6d637148147266?erid=2W5zFK9wF9A" target="_blank" rel="nofollow" class="block w-full bg-blue-600 text-white py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95 transform">Получить</a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div>
+                        <div class="w-full h-16 mb-4 flex items-center justify-center p-2">
+                            <img src="img/boostra.jpg" alt="займы онлайн, на карту, микрозаймы, Boostra" class="max-h-full max-w-full object-contain filter group-hover:contrast-125 transition-all" loading="lazy">
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xs mb-1 truncate uppercase tracking-tight">Boostra</h3>
+                        <div class="flex justify-center text-yellow-400 text-[8px] mb-3 space-x-0.5">
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <div class="space-y-1.5 py-3 border-y border-slate-50 mb-3 text-left">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Сумма:</span>
+                                <span class="font-bold text-slate-800">до 30 000 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Ставка:</span>
+                                <span class="font-bold text-blue-600 italic">от 0%</span>
+                            </div>
+                        </div>
+                        <div class="text-[8px] text-slate-400 leading-tight mb-4 min-h-[32px] flex flex-col justify-center opacity-60 italic">
+                            <p class="truncate font-semibold uppercase">ООО МКК «АВАНС-С»</p>
+                            <p>№ 2003045009509</p>
+                        </div>
+                    </div>
+                    <a href="https://pxl.leads.su/click/a7fd8044733ddc9e3db489e3ddc04264?erid=2W5zFHzPkun" target="_blank" rel="nofollow" class="block w-full bg-blue-600 text-white py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95 transform">Получить</a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div>
+                        <div class="w-full h-16 mb-4 flex items-center justify-center p-2">
+                            <img src="img/budgett.jpg" alt="займы онлайн, на карту, микрозаймы, Бюджет" class="max-h-full max-w-full object-contain filter group-hover:contrast-125 transition-all" loading="lazy">
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xs mb-1 truncate uppercase tracking-tight">Бюджет</h3>
+                        <div class="flex justify-center text-yellow-400 text-[8px] mb-3 space-x-0.5">
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <div class="space-y-1.5 py-3 border-y border-slate-50 mb-3 text-left">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Сумма:</span>
+                                <span class="font-bold text-slate-800">до 30 000 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Ставка:</span>
+                                <span class="font-bold text-blue-600 italic">от 0%</span>
+                            </div>
+                        </div>
+                        <div class="text-[8px] text-slate-400 leading-tight mb-4 min-h-[32px] flex flex-col justify-center opacity-60 italic">
+                            <p class="truncate font-semibold uppercase">ООО МКК «Диджитал Мани»</p>
+                            <p>№ 2004150009570</p>
+                        </div>
+                    </div>
+                    <a href="https://pxl.leads.su/click/31d6186508c5dcaf2d3909b3ca529f84?erid=2W5zFHNJoGk" target="_blank" rel="nofollow" class="block w-full bg-blue-600 text-white py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95 transform">Получить</a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div>
+                        <div class="w-full h-16 mb-4 flex items-center justify-center p-2">
+                            <img src="img/bunnymoney.jpg" alt="займы онлайн, на карту, микрозаймы, BunnyMoney" class="max-h-full max-w-full object-contain filter group-hover:contrast-125 transition-all" loading="lazy">
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xs mb-1 truncate uppercase tracking-tight">BunnyMoney</h3>
+                        <div class="flex justify-center text-yellow-400 text-[8px] mb-3 space-x-0.5">
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <div class="space-y-1.5 py-3 border-y border-slate-50 mb-3 text-left">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Сумма:</span>
+                                <span class="font-bold text-slate-800">до 30 000 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Ставка:</span>
+                                <span class="font-bold text-blue-600 italic">от 0%</span>
+                            </div>
+                        </div>
+                        <div class="text-[8px] text-slate-400 leading-tight mb-4 min-h-[32px] flex flex-col justify-center opacity-60 italic">
+                            <p class="truncate font-semibold uppercase">ООО МКК «Броктон»</p>
+                            <p>№ 2303392009993</p>
+                        </div>
+                    </div>
+                    <a href="https://pxl.leads.su/click/5b50cc7f4bb19d97dce32f8bc0aee358?erid=2W5zFHc6Gbz" target="_blank" rel="nofollow" class="block w-full bg-blue-600 text-white py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95 transform">Получить</a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div>
+                        <div class="w-full h-16 mb-4 flex items-center justify-center p-2">
+                            <img src="img/carmoney.jpg" alt="займы онлайн, на карту, микрозаймы, CarMoney" class="max-h-full max-w-full object-contain filter group-hover:contrast-125 transition-all" loading="lazy">
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xs mb-1 truncate uppercase tracking-tight">CarMoney</h3>
+                        <div class="flex justify-center text-yellow-400 text-[8px] mb-3 space-x-0.5">
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <div class="space-y-1.5 py-3 border-y border-slate-50 mb-3 text-left">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Сумма:</span>
+                                <span class="font-bold text-slate-800">до 30 000 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Ставка:</span>
+                                <span class="font-bold text-blue-600 italic">от 0%</span>
+                            </div>
+                        </div>
+                        <div class="text-[8px] text-slate-400 leading-tight mb-4 min-h-[32px] flex flex-col justify-center opacity-60 italic">
+                            <p class="truncate font-semibold uppercase">ООО МФК «КарМани»</p>
+                            <p>№ 2110177000471</p>
+                        </div>
+                    </div>
+                    <a href="https://pxl.leads.su/click/bc127985c2a3072ddc081dc96be6e3dd?erid=2W5zFHFFfaY" target="_blank" rel="nofollow" class="block w-full bg-blue-600 text-white py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95 transform">Получить</a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between text-center group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div>
+                        <div class="w-full h-16 mb-4 flex items-center justify-center p-2">
+                            <img src="img/cashiro.jpg" alt="займы онлайн, на карту, микрозаймы, Cashiro" class="max-h-full max-w-full object-contain filter group-hover:contrast-125 transition-all" loading="lazy">
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xs mb-1 truncate uppercase tracking-tight">Cashiro</h3>
+                        <div class="flex justify-center text-yellow-400 text-[8px] mb-3 space-x-0.5">
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <div class="space-y-1.5 py-3 border-y border-slate-50 mb-3 text-left">
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Сумма:</span>
+                                <span class="font-bold text-slate-800">до 30 000 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px]">
+                                <span class="text-slate-400 font-medium italic">Ставка:</span>
+                                <span class="font-bold text-blue-600 italic">от 0%</span>
+                            </div>
+                        </div>
+                        <div class="text-[8px] text-slate-400 leading-tight mb-4 min-h-[32px] flex flex-col justify-center opacity-60 italic">
+                            <p class="truncate font-semibold uppercase">ООО МКК «Декада»</p>
+                            <p>№ 2403045010024</p>
+                        </div>
+                    </div>
+                    <a href="https://pxl.leads.su/click/debd5e42ea160ecb1a61d53f637e0786?erid=2W5zFHdaFtL" target="_blank" rel="nofollow" class="block w-full bg-blue-600 text-white py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95 transform">Получить</a>
                 </div>
 
                 </div>
         </section>
 
         <article class="max-w-4xl mx-auto py-12 px-4 text-slate-800 leading-relaxed text-lg">
-            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter leading-none">Взять займ на карту в 2026 году</h1>
-            <p class="mb-6">Эпоха бумажного бюрократизма окончательно уступила место алгоритмам. Эксперты портала <strong>Finora Lab</strong> проанализировали текущие изменения рынка...</p>
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter leading-none">
+                Взять займ на карту в 2026 году: Полный экспертный разбор от Finora Lab
+            </h1>
+            <p class="mb-6">
+                Финансовый ландшафт 2026 года претерпел тектонические сдвиги. Эпоха бумажного бюрократизма окончательно уступила место алгоритмам. Сегодня <strong class="text-blue-600 font-bold">займ на карту</strong> — это не просто способ «перехватить до зарплаты», а высокотехнологичный финансовый инструмент, интегрированный в государственную экосистему. Эксперты портала <strong class="text-slate-900 font-bold underline decoration-blue-500 decoration-2">Finora Lab</strong> проанализировали текущие изменения рынка, чтобы вы могли безопасно и выгодно управлять своими финансами.
+            </p>
             </article>
+
     </main>
 
     <footer class="bg-slate-900 text-slate-500 py-16 px-4">
         <div class="container mx-auto max-w-5xl">
             <div class="grid md:grid-cols-2 gap-12 text-[10px] leading-relaxed italic border-b border-slate-800 pb-12 mb-8 uppercase tracking-tighter">
                 <div>
-                    <p>Сайт <strong>mikrozajmy.github.io</strong> носит исключительно информационный характер...</p>
+                    <p class="mb-4">Сайт <strong>mikrozajmy.github.io</strong> носит исключительно информационный характер и не является финансовой организацией...</p>
                 </div>
                 <div>
                     <p class="mb-4 text-slate-400 font-bold underline">Общие условия:</p>
                     <ul class="space-y-1">
-                        <li>— Процентная ставка: от 0% до 292% годовых.</li>
+                        <li>— Процентная ставка: от 0% до 292% годовых (0.8% в день).</li>
                         <li>— Срок погашения: от 61 дня до 365 дней.</li>
                     </ul>
                 </div>
@@ -142,7 +378,7 @@
         "name": "Какая максимальная ставка по займу в 2026 году?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Максимальная процентная ставка по закону составляет 0.8% в день."
+          "text": "Максимальная процентная ставка по закону составляет 0.8% в день. Это 292% годовых, но с учетом лимита переплаты 1.3x итоговая сумма к возврату всегда предсказуема."
         }
       }]
     }
